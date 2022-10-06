@@ -1,0 +1,19 @@
+groups:
+  - name: my-rules
+    rules:
+    - record: job:go_app_req_count:avg_rate5m
+      expr: avg(rate(go_app_requests_count{job="doctor_appoint"}[5m]))
+    
+    - record: job:app_response_latency_seconds:rate1m
+      expr: rate(go_app_response_latency_seconds_sum[1m])/rate(go_app_response_latency_seconds_count[1m])
+
+    - alert: GoAppDown
+      expr: up{job="doctor_appoint"}==0
+      for: 1m
+    
+    - alert: MaximumRequests
+      expr: go_app_requests_inprogress>6
+
+    - alert: AppLatency
+      expr: job:app_response_latency_seconds:rate1m > 3
+      for: 1m

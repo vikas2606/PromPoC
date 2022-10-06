@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>appointment</title>
+        
+
+    </head>
+    <body style="background-color: powderblue;">
+<h1 style="border: black;text-align:center;">DOCTOR APPOINTMENT</h1>
+
+<form name="final" action="/final" method="POST" style="text-align: center;">
+<label for="fname">First name:</label>
+<input type="text" id="fname" name="fname"><br><br>
+<label for="lname">Last name:</label>
+<input type="text" id="lname" name="lname"><br><br>
+<label for="sex">Gender:</label>
+<select name="sex" id="sex">
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+</select><br><br>
+
+<label for="mobile">Mobile number:</label>
+<input type="text" id="mobile" name="mobile"><br><br>
+<label for="email">Email:</label>
+<input type="text" id="email" name="email"><br><br>
+<label for="OPD">Category:</label>
+<select name="OPD" id="OPD">
+    <option value="Orthopedic">Orthopedic</option>
+    <option value="Pediatric">Pediatric</option>
+    <option value="Diabetes">Diabetes</option>
+</select><br><br>
+<textarea name="issue" id="issue" style="font-family:sans-serif;font-size:1.2em;">
+    Hey... tell me about your problem!
+</textarea><br><br>
+
+
+
+ 
+ <input type="submit" value="Submit">
+ 
+
+</form>
+    </body>
+
+</html>
